@@ -3,14 +3,20 @@ export enum modeTypes {
     production = "production",
 }
 
-export interface buildPaths {
+export interface BuildPaths {
     entry: string;
     build: string;
     html: string;
 }
 
-export interface buildOptions {
+export interface BuildEnv {
     mode: modeTypes;
-    paths: buildPaths;
+    port: number;
+}
+
+export interface BuildOptions {
+    mode: modeTypes;
+    paths: BuildPaths;
     isDev: boolean;
+    port: number;
 }
