@@ -8,8 +8,11 @@ export function buildDevServer(options: BuildOptions): DevServerConfiguration {
         static: {
             directory: paths.build,
         },
-        open: true,
+        open: {
+            app: "Google Chrome",
+        },
         // compress: true,
         port,
+        historyApiFallback: true,
     };
 }
