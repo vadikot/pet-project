@@ -4,12 +4,13 @@ import {MainPageLazy} from "./pages/MainPage/MainPage.lazy";
 import {AboutPageLazy} from "./pages/AboutPage/AboutPage.lazy";
 import {NotFoundPageLazy} from "./pages/NotFoundPage/NotFoundPage.lazy";
 import {useTheme} from "./theme/useThemes";
+import {classNames} from "./helpers/classNames";
 
 const App = () => {
     const {theme, toggleTheme} = useTheme();
 
     return (
-        <div className={`app ${theme}`}>
+        <div className={classNames('app', {}, [theme])}>
             <button onClick={toggleTheme}>toggle theme</button>
             <Link to="/">home Page</Link><br/>
             <Link to="/about">about Page</Link>
