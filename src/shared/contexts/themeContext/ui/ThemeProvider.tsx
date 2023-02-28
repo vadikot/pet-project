@@ -1,10 +1,10 @@
 import React, {FC, PropsWithChildren, useMemo, useState} from "react";
-import {LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeType} from "./ThemeContext";
+import {LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeType} from "shared/contexts/themeContext/lib/ThemeContext";
 
 interface ThemeProviderProps {
 }
 
-const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ThemeType || ThemeType.light
+const defaultTheme = localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as ThemeType || ThemeType.light;
 
 const ThemeProvider: FC<PropsWithChildren<ThemeProviderProps>> = ({children}) => {
     const [theme, setTheme] = useState<ThemeType>(defaultTheme);
