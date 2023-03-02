@@ -1,0 +1,24 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.menu {
+  display: flex;
+
+  .navbarLink {
+    color: var(--inverted-links-color);
+    font-weight: bold;
+    margin-right: 15px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}

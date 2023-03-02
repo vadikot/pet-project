@@ -7,15 +7,15 @@ import {appRoutes, RoutesPaths} from "shared/routes/routes";
 
 export const RoutingConfig: Record<appRoutes, RouteProps> = {
     [appRoutes.main]: {
-        path: RoutesPaths.main,
+        path: RoutesPaths[appRoutes.main],
         element: <MainPage/>,
     },
     [appRoutes.about]: {
-        path: RoutesPaths.about,
+        path: RoutesPaths[appRoutes.about],
         element: <AboutPage/>,
     },
     [appRoutes.notFound]: {
-        path: RoutesPaths.notFound,
+        path: RoutesPaths[appRoutes.notFound],
         element: <NotFoundPage/>,
     },
 }

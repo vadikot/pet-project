@@ -1,18 +1,15 @@
 import React from "react";
-import {Link} from "react-router-dom";
 import {classNames} from "shared/lib/classNames/classNames";
 import {useTheme} from "shared/contexts/themeContext";
 import Routing from "pages";
+import {Header} from "widgets/Hedaer";
 
 const App = () => {
-    const {theme, toggleTheme} = useTheme();
+    const {theme} = useTheme();
 
     return (
         <div className={classNames('app', {}, [theme])}>
-            <button onClick={toggleTheme}>toggle theme</button>
-            <Link to="/">home Page</Link><br/>
-            <Link to="/about">about Page</Link>
-
+            <Header/>
             <Routing/>
         </div>
     );
