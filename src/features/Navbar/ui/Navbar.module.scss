@@ -2,11 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-}
-
-.menu {
-  display: flex;
 
   .navbarLink {
     color: var(--inverted-links-color);
@@ -22,3 +17,4 @@
     }
   }
 }
+

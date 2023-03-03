@@ -1,4 +1,4 @@
-import {ThemeContext, ThemeContextProps} from "shared/contexts/themeContext/lib/ThemeContext";
+import {ThemeContext, ThemeContextProps} from "shared/contexts/Theme/lib/ThemeContext";
 import {useContext} from "react";
 
 /**

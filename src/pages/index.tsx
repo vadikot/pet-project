@@ -3,7 +3,7 @@ import {Route, RouteProps, Routes} from "react-router-dom";
 import {MainPage} from "pages/MainPage";
 import {NotFoundPage} from "pages/NotFoundPage";
 import {AboutPage} from "pages/AboutPage";
-import {appRoutes, RoutesPaths} from "shared/routes/routes";
+import {appRoutes, RoutesPaths} from "shared/lib/routes";
 
 export const RoutingConfig: Record<appRoutes, RouteProps> = {
     [appRoutes.main]: {

@@ -1,5 +1,5 @@
 import React, {FC, PropsWithChildren, useMemo, useState} from "react";
-import {LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeType} from "shared/contexts/themeContext/lib/ThemeContext";
+import {LOCAL_STORAGE_THEME_KEY, ThemeContext, ThemeType} from "../lib/ThemeContext"
 
 interface ThemeProviderProps {
 }
