@@ -15,7 +15,7 @@ const ThemeSwitcher: FC<PropsWithChildren<ThemeSwitcherProps>> = () => {
         <AppButton onClick={toggleTheme}
         >
             {
-                (theme === ThemeType.light) ? <LightIcon/> : <DarkIcon/>
+                (theme === ThemeType.light) ? <DarkIcon/> : <LightIcon/>
             }
         </AppButton>
     );

@@ -8,8 +8,14 @@
   background: var(--bg-color);
   color: var(--primary-color);
   min-height: 100vh;
+}
 
-  a {
-    color: var(--links-color);
-  }
+.main {
+  display: flex;
+  height: calc(100vh - var(--header-height));
+}
+
+.content {
+  flex-grow: 1;
+  padding: 10px;
 }

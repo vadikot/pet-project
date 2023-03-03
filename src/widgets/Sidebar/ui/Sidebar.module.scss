@@ -1,0 +1,15 @@
+.Sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  width: 300px;
+  padding: 10px 0;
+  border-right: 1px solid black;
+  transition: 0.5s;
+}
+
+.collapsed {
+  width: 80px;
+}

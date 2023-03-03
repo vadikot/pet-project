@@ -3,6 +3,7 @@ import {classNames} from "shared/lib/classNames";
 import {useTheme} from "shared/contexts/Theme";
 import Routing from "pages";
 import {Header} from "widgets/Hedaer";
+import {Sidebar} from "widgets/Sidebar";
 
 const App = () => {
     const {theme} = useTheme();
@@ -10,7 +11,12 @@ const App = () => {
     return (
         <div className={classNames('app', {}, [theme])}>
             <Header/>
-            <Routing/>
+            <main className="main">
+                <Sidebar/>
+                <div className="content">
+                    <Routing/>
+                </div>
+            </main>
         </div>
     );
 };

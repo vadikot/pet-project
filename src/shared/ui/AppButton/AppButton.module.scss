@@ -3,7 +3,9 @@
 }
 
 .default {
-  border: 1px solid deeppink;
+  background: none;
+  color: var(--inverted-bg-color);
+  border: 1px solid var(--inverted-bg-color);
   padding: 5px 10px;
 }
 
