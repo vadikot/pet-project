@@ -3,7 +3,8 @@ import {Route, RouteProps, Routes} from "react-router-dom";
 import {MainPage} from "pages/MainPage";
 import {NotFoundPage} from "pages/NotFoundPage";
 import {AboutPage} from "pages/AboutPage";
-import {appRoutes, RoutesPaths} from "shared/lib/routes";
+import {appRoutes, RoutesPaths} from "shared/config/routes";
+import {useTranslation} from "react-i18next";
 
 export const RoutingConfig: Record<appRoutes, RouteProps> = {
     [appRoutes.main]: {
@@ -21,8 +22,10 @@ export const RoutingConfig: Record<appRoutes, RouteProps> = {
 }
 
 const Routing = () => {
+    const {t} = useTranslation();
+
     return (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<div>{t('loading')}</div>}>
             <Routes>
                 {
                     Object.values(RoutingConfig).map(route => (

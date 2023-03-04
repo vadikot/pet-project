@@ -1,19 +1,19 @@
 import React, {ButtonHTMLAttributes, FC, PropsWithChildren} from "react";
 import {classNames} from "shared/lib/classNames";
-import classes from "./AppButton.module.scss";
+import classes from "./Button.module.scss";
 
-export enum AppButtonThemes {
+export enum ButtonThemes {
     default = 'default',
     clear = 'clear',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
-    buttonTheme?: AppButtonThemes,
+    buttonTheme?: ButtonThemes,
 }
 
-const AppButton: FC<PropsWithChildren<AppButtonProps>> = (props) => {
-    const {className, children, buttonTheme = AppButtonThemes.clear, ...other} = props;
+const Button: FC<PropsWithChildren<AppButtonProps>> = (props) => {
+    const {className, children, buttonTheme = ButtonThemes.clear, ...other} = props;
 
     return (
         <button
@@ -25,4 +25,4 @@ const AppButton: FC<PropsWithChildren<AppButtonProps>> = (props) => {
     );
 };
 
-export default AppButton;
+export default Button;

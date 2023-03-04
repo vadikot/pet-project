@@ -2,11 +2,11 @@ import {Configuration as DevServerConfiguration} from "webpack-dev-server";
 import {BuildOptions} from "./types/config";
 
 export function buildDevServer(options: BuildOptions): DevServerConfiguration {
-    const {paths, port} = options;
+    const {port} = options;
 
     return {
         static: {
-            directory: paths.build,
+            // directory: paths.build,
         },
         open: {
             app: "Google Chrome",

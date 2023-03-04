@@ -2,7 +2,8 @@ import React, {FC, PropsWithChildren, useState} from "react";
 import {classNames} from "shared/lib/classNames";
 import classes from "./Sidebar.module.scss";
 import {ThemeSwitcher} from "features/ThemeSwither";
-import {AppButton, AppButtonThemes} from "shared/ui/AppButton";
+import {Button, ButtonThemes} from "shared/ui/Button";
+import {LanguageSwitcher} from "features/LanguageSwitcher";
 
 interface SidebarProps {
     className?: string;
@@ -18,9 +19,11 @@ const Sidebar: FC<PropsWithChildren<SidebarProps>> = (props) => {
 
     return (
         <div className={classNames(classes.Sidebar, {[classes.collapsed]: isCollapsed}, [className])}>
-            <AppButton onClick={sidebarToggleHandler} buttonTheme={AppButtonThemes.default}>Collapse</AppButton>
-            <ThemeSwitcher/>
-            {/*<LanguageSwithcer/>*/}
+            <Button onClick={sidebarToggleHandler} buttonTheme={ButtonThemes.default}>Collapse</Button>
+            <div className={classes.switchers}>
+                <ThemeSwitcher/>
+                <LanguageSwitcher/>
+            </div>
         </div>
     );
 };
