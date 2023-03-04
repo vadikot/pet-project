@@ -1,10 +1,10 @@
 import React, {Suspense} from 'react';
 import {render} from "react-dom";
-import "./app/styles/index.scss";
-import App from "./app/App";
+import "./01_app/styles/index.scss";
+import App from "./01_app/App";
 import {BrowserRouter} from "react-router-dom";
-import {ThemeProvider} from "shared/contexts/Theme";
-import './shared/config/i18n';
+import {ThemeProvider} from "./06_shared/contexts/Theme";
+import './06_shared/config/i18n';
 
 const root = document.getElementById('root');
 
