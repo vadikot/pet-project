@@ -3,10 +3,8 @@ type modsType = Record<string, boolean | string>;
 //     [key: string]: boolean,
 // }
 
-export const classNames = (mainClass: string, mods?: modsType, additional?: string[]): string => {
-    return [
-        mainClass,
-        ...Object.keys(mods).filter(key => mods[key] === true ? key : null),
-        ...additional
-    ].join(' ');
-};
+export const classNames = (mainClass: string, mods?: modsType, additional?: string[]): string => [
+    mainClass,
+    ...Object.keys(mods).filter((key) => (mods[key] === true ? key : null)),
+    ...additional,
+].join(' ');

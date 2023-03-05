@@ -1,9 +1,11 @@
-import React, {FC, PropsWithChildren, SelectHTMLAttributes, useMemo} from "react";
-import {classNames} from "06_shared/lib/classNames";
-import classes from "./Select.module.scss";
+import React, {
+    FC, PropsWithChildren, SelectHTMLAttributes, useMemo,
+} from 'react';
+import { classNames } from '06_shared/lib/classNames';
+import classes from './Select.module.scss';
 
 export enum SelectTheme {
-    default = "default",
+    default = 'default',
     clear = 'clear',
 }
 
@@ -32,20 +34,19 @@ const Select: FC<PropsWithChildren<SelectProps>> = (props) => {
 
     const selectOptions = useMemo(() => {
         if (options?.length) {
-            return options.map(item => (<option key={item.value} value={item.value}>{item.label}</option>));
-        } else {
-            return (children);
+            return options.map((item) => (<option key={item.value} value={item.value}>{item.label}</option>));
         }
+        return (children);
     }, [options, children]);
 
     return (
         <select
-            defaultValue={defaultValue || ""}
+            defaultValue={defaultValue || ''}
             {...other}
             className={classNames(classes.Select, {}, [className, classes[theme]])}
         >
             {
-                (defaultName) && <option disabled value={""}>{defaultName}</option>
+                (defaultName) && <option disabled value="">{defaultName}</option>
             }
             {selectOptions}
         </select>

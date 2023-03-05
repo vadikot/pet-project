@@ -1,6 +1,6 @@
 export enum modeTypes {
-    development = "development",
-    production = "production",
+    development = 'development',
+    production = 'production',
 }
 
 export interface BuildPaths {

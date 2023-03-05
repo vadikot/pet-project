@@ -1,6 +1,6 @@
-import {appRoutes, RoutesPaths} from "./routes";
+import { appRoutes, RoutesPaths } from './routes';
 
 export {
     appRoutes,
     RoutesPaths,
-}
+};

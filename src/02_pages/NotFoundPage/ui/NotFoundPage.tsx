@@ -1,13 +1,15 @@
 import React from 'react';
-import {Link} from "react-router-dom";
-import {useTranslation} from "react-i18next";
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const NotFoundPage = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
 
     return (
         <div>
-            {t('sorryPageNotFound')} <Link to="/">{t('homePage')}</Link>
+            {t('sorryPageNotFound')}
+            {' '}
+            <Link to="/">{t('homePage')}</Link>
         </div>
     );
 };

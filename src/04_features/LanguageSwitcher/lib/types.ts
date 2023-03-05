@@ -8,4 +8,4 @@ export const Languages: Record<LanguageTypes, string> = {
     [LanguageTypes.en]: 'English',
     [LanguageTypes.pl]: 'Polish',
     [LanguageTypes.ru]: 'Русский',
-}
+};

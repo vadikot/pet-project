@@ -1,9 +1,27 @@
-import webpack from "webpack";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import {BuildOptions} from "./types/config";
+import webpack from 'webpack';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import { BuildOptions } from './types/config';
+
+const ReactRefreshTypeScript = require('react-refresh-typescript');
 
 export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
-    const {isDev} = options;
+    const { isDev } = options;
+
+    const reactRefreshLoader = {
+        test: /\.[jt]sx?$/,
+        exclude: /node_modules/,
+        use: [
+            {
+                loader: require.resolve('ts-loader'),
+                options: {
+                    getCustomTransformers: () => ({
+                        before: [isDev && ReactRefreshTypeScript()].filter(Boolean),
+                    }),
+                    transpileOnly: isDev,
+                },
+            },
+        ],
+    };
 
     const svgLoader = {
         test: /\.svg$/,
@@ -20,31 +38,40 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const typeScriptLoader = {
         test: /\.tsx?$/,
-        use: 'ts-loader',
+        use: [
+            {
+                loader: 'ts-loader',
+                options: {
+                    transpileOnly: true,
+                },
+            },
+        ],
         exclude: /node_modules/,
     };
 
     const styleLoader = {
         test: /\.s[ac]ss$/i,
         use: [
-            isDev ? "style-loader" : MiniCssExtractPlugin.loader,
+            isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
             {
-                loader: "css-loader",
+                loader: 'css-loader',
                 options: {
                     modules: {
                         auto: /\.module\.(scss|sass)$/,
-                        localIdentName: isDev ? "[path][name]__[local]--[hash:base64:5]" : "[hash:base64:8]",
+                        localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
                     },
                 },
             },
-            "sass-loader",
+            'sass-loader',
         ],
     };
 
     return [
+        // without isDev, we have a lot of errors in the production build, because the loader works crookedly
+        isDev && reactRefreshLoader,
         svgLoader,
         fileLoader,
         typeScriptLoader,
         styleLoader,
-    ]
+    ].filter(Boolean);
 }

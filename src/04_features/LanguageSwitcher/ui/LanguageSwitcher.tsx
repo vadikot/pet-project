@@ -1,7 +1,9 @@
-import React, {ChangeEvent, FC, PropsWithChildren, useMemo, useState} from "react";
-import i18next from "i18next";
-import {Languages, LanguageTypes} from "../lib/types";
-import {Select} from "06_shared/ui/Select";
+import React, {
+    ChangeEvent, FC, PropsWithChildren, useMemo, useState,
+} from 'react';
+import i18next from 'i18next';
+import { Select } from '06_shared/ui/Select';
+import { Languages, LanguageTypes } from '../lib/types';
 
 interface LanguageSwitcherProps {
     className?: string;
@@ -25,11 +27,9 @@ const LanguageSwitcher: FC<PropsWithChildren<LanguageSwitcherProps>> = () => {
         }
     };
 
-    const languagesOptions = useMemo(() => {
-        return Object.keys(Languages)?.map(key => (
-            <option key={key} value={key}>{Languages[key as LanguageEnumType]}</option>
-        ));
-    }, [language]);
+    const languagesOptions = useMemo(() => Object.keys(Languages)?.map((key) => (
+        <option key={key} value={key}>{Languages[key as LanguageEnumType]}</option>
+    )), [language]);
 
     return (
         <Select defaultValue={language} onChange={toggleLanguageHandler}>{languagesOptions}</Select>

@@ -1,6 +1,6 @@
-import React, {ButtonHTMLAttributes, FC, PropsWithChildren} from "react";
-import {classNames} from "06_shared/lib/classNames";
-import classes from "./Button.module.scss";
+import React, { ButtonHTMLAttributes, FC, PropsWithChildren } from 'react';
+import { classNames } from '06_shared/lib/classNames';
+import classes from './Button.module.scss';
 
 export enum ButtonThemes {
     default = 'default',
@@ -13,10 +13,13 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: FC<PropsWithChildren<AppButtonProps>> = (props) => {
-    const {className, children, buttonTheme = ButtonThemes.clear, ...other} = props;
+    const {
+        className, children, buttonTheme = ButtonThemes.clear, ...other
+    } = props;
 
     return (
         <button
+            type="button"
             {...other}
             className={classNames(classes.AppButton, {}, [className, classes[buttonTheme]])}
         >
