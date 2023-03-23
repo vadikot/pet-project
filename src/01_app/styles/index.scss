@@ -10,6 +10,10 @@
     min-height: 100vh;
 }
 
+.app a {
+    color: var(--inverted-bg-color);
+}
+
 .main {
     display: flex;
     height: calc(100vh - var(--header-height));

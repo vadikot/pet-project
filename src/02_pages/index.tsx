@@ -5,6 +5,7 @@ import { NotFoundPage } from '02_pages/NotFoundPage';
 import { AboutPage } from '02_pages/AboutPage';
 import { appRoutes, RoutesPaths } from '06_shared/config/routes';
 import { useTranslation } from 'react-i18next';
+import { Loader } from '06_shared/ui/Loader';
 
 export const RoutingConfig: Record<appRoutes, RouteProps> = {
     [appRoutes.main]: {
@@ -25,7 +26,7 @@ const Routing = () => {
     const { t } = useTranslation();
 
     return (
-        <Suspense fallback={<div>{t('loading')}</div>}>
+        <Suspense fallback={<Loader />}>
             <Routes>
                 {
                     Object.values(RoutingConfig).map((route) => (
