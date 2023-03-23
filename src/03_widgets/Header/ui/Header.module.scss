@@ -1,17 +1,17 @@
 .Header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  min-height: var(--header-height);
-  background: var(--inverted-bg-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: var(--header-height);
+    background: var(--inverted-bg-color);
 }
 
 .container {
-  padding: var(--container-padding);
+    padding: var(--container-padding);
 }
 
 .logo {
-  background: var(--bg-color);
-  padding: 5px;
-  font-weight: bold;
+    background: var(--bg-color);
+    padding: 5px;
+    font-weight: bold;
 }

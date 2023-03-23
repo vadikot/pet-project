@@ -1,14 +1,11 @@
 .Select {
-  background: none;
-  cursor: pointer;
-  outline: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
 }
 
 .default {
-  background: var(--bg-color);
-  color: var(--inverted-bg-color);
-  border-color: var(--inverted-bg-color);;
-}
-
-.clear {
+    background: var(--bg-color);
+    color: var(--inverted-bg-color);
+    border-color: var(--inverted-bg-color);
 }

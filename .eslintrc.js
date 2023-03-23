@@ -6,6 +6,7 @@ module.exports = {
     extends: [
         'plugin:react/recommended',
         'airbnb',
+        'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
     parserOptions: {
@@ -18,6 +19,7 @@ module.exports = {
     plugins: [
         'react',
         '@typescript-eslint',
+        'i18next',
     ],
     rules: {
         indent: ['error', 4, { SwitchCase: 1, ignoredNodes: ['PropertyDefinition'] }],
@@ -43,6 +45,7 @@ module.exports = {
         ],
         'import/prefer-default-export': [0],
         'react/require-default-props': [0],
+        'i18next/no-literal-string': 2,
     },
     globals: {
         _: 'readonly',
