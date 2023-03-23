@@ -21,8 +21,18 @@ const Sidebar: FC<PropsWithChildren<SidebarProps>> = (props) => {
     };
 
     return (
-        <div className={classNames(classes.Sidebar, { [classes.collapsed]: isCollapsed }, [className])}>
-            <Button onClick={sidebarToggleHandler} buttonTheme={ButtonThemes.default}>{t('Collapse')}</Button>
+        <div className={classNames(
+            classes.Sidebar,
+            { [classes.collapsed]: isCollapsed },
+            [className],
+        )}
+        >
+            <Button
+                onClick={sidebarToggleHandler}
+                buttonTheme={ButtonThemes.default}
+            >
+                {t('Collapse')}
+            </Button>
             <div className={classes.switchers}>
                 <ThemeSwitcher />
                 <LanguageSwitcher />

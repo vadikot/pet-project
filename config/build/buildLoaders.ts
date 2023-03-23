@@ -49,6 +49,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/,
     };
 
+    const styleFileNameForDev = '[path][name]__[local]--[hash:base64:5]';
+
     const styleLoader = {
         test: /\.s[ac]ss$/i,
         use: [
@@ -58,7 +60,7 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
                 options: {
                     modules: {
                         auto: /\.module\.(scss|sass)$/,
-                        localIdentName: isDev ? '[path][name]__[local]--[hash:base64:5]' : '[hash:base64:8]',
+                        localIdentName: isDev ? styleFileNameForDev : '[hash:base64:8]',
                     },
                 },
             },

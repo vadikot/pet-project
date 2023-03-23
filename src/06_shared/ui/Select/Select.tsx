@@ -34,7 +34,9 @@ const Select: FC<PropsWithChildren<SelectProps>> = (props) => {
 
     const selectOptions = useMemo(() => {
         if (options?.length) {
-            return options.map((item) => (<option key={item.value} value={item.value}>{item.label}</option>));
+            return options.map((item) => (
+                <option key={item.value} value={item.value}>{item.label}</option>
+            ));
         }
         return (children);
     }, [options, children]);
